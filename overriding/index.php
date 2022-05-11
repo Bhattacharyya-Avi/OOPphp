@@ -4,27 +4,24 @@
 * overriding means replace the value to the property or functionality 
 of the method of base class.
  */
-
-class A{
-    public $a = "base class";
-
+class Over_parent{
+    public $a = "base class.";
     public function calculation($x,$y){
-        echo "result of multiplication ". $x*$y;
+        echo "result of multiplication". $x*$y;
     }
 }
 
-class B extends A{
-    public $a = "child class";
-
+class Over_child extends Over_parent{
+    public $a = "child class.";
     public function calculation($x,$y){
-        echo "result of sum ". $x+$y;
+        echo "result of sum". $x+$y;
     }
 }
 
 # property overriding
-// $obj = new B();
-// echo $obj->a;
+// $obj = new Over_child();
+// echo $obj->a."<br>";
 
 # method overriding
-$obj = new B();
-$obj->calculation(10,5);
+$obj = new Over_child();
+echo $obj->calculation(10,5);
